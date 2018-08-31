@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Carbon\Carbon;
 
 class Crawl_jobindex extends Command
 {
@@ -20,7 +19,6 @@ class Crawl_jobindex extends Command
     {
         echo "\n";
         echo "Sending requests to jobindex.dk\n";
-        $query = \App\Job_index_queries::where('id', 1)->first();
         foreach(\App\Job_index_queries::get() AS $query)
         {
             echo "Query: " . $query->name . "\n";
